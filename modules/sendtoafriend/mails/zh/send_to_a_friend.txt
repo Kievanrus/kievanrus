@@ -1,0 +1,13 @@
+
+[{shop_url}] 
+
+{name} 您好，
+
+感谢您在{shop_name} 注册客户账户。 
+
+点击这里查看此商品： {product}
+[{product_link}] 
+
+{shop_name} [{shop_url}] 由 PrestaShop(tm)
+[http://www.prestashop.com/] 
+
