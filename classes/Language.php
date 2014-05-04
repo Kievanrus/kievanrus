@@ -715,6 +715,15 @@ class LanguageCore extends ObjectModel
 				self::$_LANGUAGES[(int)$row['id_lang']] = $row;
 			self::$_LANGUAGES[(int)$row['id_lang']]['shops'][(int)$row['id_shop']] = true;
 		}
+
+        // Set thumb
+        foreach (self::$_LANGUAGES as &$lang) {
+            $path_to_image = _PS_IMG_DIR_ . 'l/' . $lang['id_lang'] . '.jpg';
+            $lang['thumb'] = ImageManager::thumbnail(
+                $path_to_image, 'lang_mini_' . $lang['id_lang'] . '_1.jpg', 45, 'jpg'
+            );
+        }
+        unset($lang);
 	}
 
 	public function update($nullValues = false)
