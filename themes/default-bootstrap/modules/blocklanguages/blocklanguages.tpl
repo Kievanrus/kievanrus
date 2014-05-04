@@ -28,7 +28,7 @@
 		{foreach from=$languages key=k item=language name="languages"}
 			{if $language.iso_code == $lang_iso}
 				<div class="current">
-					<span>
+					<span class="lang-thumb">
                         {$language.thumb}
                         {$language.name|regex_replace:"/\s.*$/":""}
                     </span>
@@ -46,7 +46,7 @@
 						<a href="{$link->getLanguageLink($language.id_lang)|escape:'html':'UTF-8'}" title="{$language.name}">
 					{/if}
 				{/if}
-						<span>
+					    <span class="lang-thumb">
                             {$language.thumb}
                             {$language.name|regex_replace:"/\s.*$/":""}
                         </span>
@@ -57,5 +57,8 @@
 			{/foreach}
 		</ul>
 	</div>
+    <script type="text/javascript">
+        $('.lang-thumb').find('img').css('width', '25px').css('padding', 0).css('border', 0);
+    </script>
 {/if}
 <!-- /Block languages module -->
